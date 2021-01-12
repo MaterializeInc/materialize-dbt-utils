@@ -1,4 +1,4 @@
-# materialize-utils
+# materialize-dbt-utils
 
 This [dbt](https://github.com/fishtown-analytics/dbt) package contains macros
 that:
