@@ -20,6 +20,37 @@ functions.
 
 ----
 
+### Testing
+
+To run the integration tests, do the following:
+1. Git clone this repository
+1. Add the following profile to your list of dbt profiles (run `dbt debug` to locate
+   your local profiles):
+   ```nofmt
+   integration_tests:
+     outputs:
+       dev:
+         type: materialize
+         threads: 1
+         host: localhost
+         port: 6875
+         user: user
+         password: password
+         dbname: materialize
+         schema: public
+     target: dev
+   ```
+1. In your terminal, navigate to the `integration_tests/dbt_utils` subdirectory:
+    ```nofmt
+   cd integration_tests/dbt_utils
+   ```
+1. Run the tests:
+    ```nofmt
+   make test-materialize
+   ```
+
+----
+
 ### Contributing
 
 We welcome contributions to this repo! To contribute a new feature or a fix,

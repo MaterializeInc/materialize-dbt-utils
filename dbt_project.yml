@@ -1,4 +1,4 @@
-name: 'materialize_utils'
+name: 'materialize_dbt_utils'
 version: '0.1.0'
 config-version: 2
 
