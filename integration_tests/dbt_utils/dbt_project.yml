@@ -20,3 +20,22 @@ vars:
   dbt_utils_dispatch_list:
     - materialize_dbt_utils
     - dbt_utils_integration_tests
+
+models:
+  # More info about disabled tests: https://github.com/MaterializeInc/materialize-dbt-utils/issues/7
+  dbt_utils_integration_tests:
+    cross_db_utils:
+      # Materialize doesn't support current_timestamp() in static queries
+      test_current_timestamp:
+        +enabled: false
+      test_current_timestamp_in_utc:
+        +enabled: false
+      # Materialize does not currently support md5
+      # See: https://github.com/MaterializeInc/materialize/issues/4461
+      test_hash:
+        +enabled: false
+    sql:
+      # Materialize does not currently support md5
+      # See: https://github.com/MaterializeInc/materialize/issues/4461
+      test_surrogate_key:
+        +enabled: false
