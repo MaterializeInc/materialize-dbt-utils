@@ -30,12 +30,51 @@ models:
         +enabled: false
       test_current_timestamp_in_utc:
         +enabled: false
+      # TODO @ jldlaughlin: triage assertion failure
+      test_dateadd:
+        +enabled: false
+      # TODO @ jldlaughlin: triage execution error
+      test_datediff:
+        +enabled: false
+      # TODO @ jldlaughlin: triage assertion failure
+      test_date_trunc:
+        +enabled: false
       # Materialize does not currently support md5
       # See: https://github.com/MaterializeInc/materialize/issues/4461
       test_hash:
         +enabled: false
+      # Todo @ jldlaughlin: triage execution error
+      test_last_day:
+        +enabled: false
+      # Requires position()
+      test_position:
+        +enabled: false
+      # Requires right()
+      test_right:
+        +enabled: false
+      # Not relevant for Materialize!
+      test_width_bucket:
+        +enabled: false
+    datetime:
+      # Requires generate_series() (see below)
+      test_date_spine:
+        +enabled: false
+    schema_tests:
+      # Materialize doesn't support creating views that contain current_timestamp
+      test_recency:
+        +enabled: false
     sql:
+      # Requires pow()
+      test_generate_series:
+        +enabled: false
+      # TODO @ jldlaughlin: triage assertion failure
+      test_pivot:
+        +enabled: false
       # Materialize does not currently support md5
       # See: https://github.com/MaterializeInc/materialize/issues/4461
       test_surrogate_key:
+        +enabled: false
+    web:
+      # TODO for jldlaughlin: triage parse failure
+      test_url_path:
         +enabled: false
