@@ -25,7 +25,7 @@ models:
   # More info about disabled tests: https://github.com/MaterializeInc/materialize-dbt-utils/issues/7
   dbt_utils_integration_tests:
     cross_db_utils:
-      # Materialize doesn't support creating views that contain current_timestamp
+      # Materialize doesn't support current_timestamp() in static queries
       test_current_timestamp:
         +enabled: false
       test_current_timestamp_in_utc:
