@@ -101,7 +101,7 @@ To run the integration tests, do the following:
    ```nofmt
    integration_tests:
      outputs:
-       dev:
+       materialize:
          type: materialize
          threads: 1
          host: localhost
@@ -110,7 +110,6 @@ To run the integration tests, do the following:
          password: password
          dbname: materialize
          schema: public
-     target: dev
    ```
 1. In your terminal, navigate to the `integration_tests/dbt_utils` subdirectory:
     ```nofmt
@@ -118,7 +117,7 @@ To run the integration tests, do the following:
    ```
 1. Run the tests:
     ```nofmt
-   make test-materialize
+   make test-materialize [target=custom-target-name:materialize]
    ```
 
 ----

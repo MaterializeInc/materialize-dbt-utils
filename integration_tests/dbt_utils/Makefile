@@ -1,6 +1,7 @@
+target = materialize
 
 test-materialize:
 	dbt deps
-	dbt seed
-	dbt run
-	dbt test
+	dbt seed --target $(target)
+	dbt run --target $(target)
+	dbt test --target $(target)
