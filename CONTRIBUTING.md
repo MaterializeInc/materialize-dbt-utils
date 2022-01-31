@@ -21,8 +21,8 @@ To run the integration tests, do the following:
          threads: 1
          host: localhost
          port: 6875
-         user: user
-         password: password
+         user: materialize
+         password: ignored
          dbname: materialize
          schema: public
    ```
