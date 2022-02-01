@@ -55,7 +55,7 @@ We explicitly avoid depending on `latest` so that CI is deterministic. New
 6. Push that tag to GitHub:
 
    ```
-   git push vX.Y.Z
+   git push origin vX.Y.Z
    ```
 
 4. Verify that CI passes on the tag and publishes a GitHub release.
