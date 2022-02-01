@@ -4,10 +4,23 @@ config-version: 2
 
 profile: integration_tests
 
-vars:
-  dbt_utils_dispatch_list:
-    - materialize_dbt_utils
-    - dbt_utils_integration_tests
+dispatch:
+  - macro_namespace: dbt_utils
+    search_order: [materialize_dbt_utils, dbt_utils_integration_tests, dbt_utils]
+
+seeds:
+  dbt_utils_integration_tests:
+    schema_tests:
+      data_test_mutually_exclusive_ranges_no_gaps:
+        +enabled: false
+      data_test_mutually_exclusive_ranges_with_gaps:
+        +enabled: false
+      data_test_mutually_exclusive_ranges_with_gaps_zero_length:
+        +enabled: false
+      data_test_sequential_timestamps:
+        +enabled: false
+      data_test_sequential_values:
+        +enabled: false
 
 models:
   # More info about disabled tests: https://github.com/MaterializeInc/materialize-dbt-utils/issues/7
@@ -62,7 +75,18 @@ models:
       # See: https://github.com/MaterializeInc/materialize/issues/4461
       test_surrogate_key:
         +enabled: false
+      test_get_relations_by_pattern:
+        +enabled: false
+      test_get_relations_by_prefix_and_union:
+        +enabled: false
+      test_get_column_values:
+        +enabled: false
     web:
       # TODO for jldlaughlin: triage parse failure
       test_url_path:
+        +enabled: false
+    geo:
+      test_haversine_distance_km:
+        +enabled: false
+      test_haversine_distance_mi:
         +enabled: false
