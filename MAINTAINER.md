@@ -6,19 +6,20 @@ To update the tested version of dbt-materialize, bump the version specification
 in the `pip install` invocation in [.github/workflows/main.yml].
 
 To update the tested version of `materialized`, bump the version specification
-in the `services` specification in [.github/workflows/main.yml].
+in the `services` specification in [.github/workflows/main.yml]. We explicitly
+avoid depending on `latest` so that CI is deterministic.
 
 To update the embedded dbt-utils:
 
 ```shell
 cd dbt-utils
-git checkout main
+git checkout vVERSION
 git pull
 cd ..
+# Update dbt-utils version in README.md
+# Update compatibility matrix for new macros/schema-tests in README.md.
 git commit -am 'Update dbt-utils'
 ```
-
-We explicitly avoid depending on `latest` so that CI is deterministic. New
 
 ## Cutting a new release
 
@@ -26,39 +27,41 @@ We explicitly avoid depending on `latest` so that CI is deterministic. New
 
 2. Bump the version number in [dbt_project.yml].
 
-3. Add an entry for the new version to [CHANGELOG.md].
+3. Bump the version number in [README.md].
 
-3. Make a PR with the above changes.
+4. Add an entry for the new version to [CHANGELOG.md].
 
-4. Merge the PR to `main`.
+5. Make a PR with the above changes.
 
-5. Pull the new commit locally:
+6. Merge the PR to `main`.
+
+7. Pull the new commit locally:
 
    ```
    git checkout main
    git pull
    ```
 
-6. Verify that you're on the version bump commit:
+8. Verify that you're on the version bump commit:
 
    ```
    git log
    # Make sure most recent commit is your version bump.
    ```
 
-5. Create an annotated tag for the new version:
+9. Create an annotated tag for the new version:
 
    ```
    git tag -a vX.Y.Z -m vX.Y.Z
    ```
 
-6. Push that tag to GitHub:
+10. Push that tag to GitHub:
 
    ```
    git push origin vX.Y.Z
    ```
 
-4. Verify that CI passes on the tag and publishes a GitHub release.
+11. Verify that CI passes on the tag and publishes a GitHub release.
 
 [.github/workflows/main.yml]: .github/workflows/main.yml
 [dbt_project.yml]: dbt_project.yml
