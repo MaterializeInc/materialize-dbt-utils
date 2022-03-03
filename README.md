@@ -15,8 +15,8 @@ following packages with [Materialize]:
 ## Installation
 
 Requirements:
-- [dbt-materialize](https://pypi.org/project/dbt-materialize/) v1.0.1.post2+
-- [Materialize](https://materialize.com/docs/install/) v0.20.0+
+- [dbt-materialize](https://pypi.org/project/dbt-materialize/) v1.0.3
+- [Materialize](https://materialize.com/docs/install/) v0.22.0+
 
 Install this package by adding the following to the `packages.yml` file in your
 root dbt project:
@@ -26,7 +26,7 @@ packages:
   - package: dbt-labs/dbt_utils
     version: 0.8.0
   - package: MaterializeInc/materialize_dbt_utils
-    version: 0.2.0
+    version: 0.3.0
 ```
 
 Then set a `dispatch` config in your `dbt_project.yml:
@@ -56,7 +56,7 @@ Name                               | Supported?         | Notes
 [`fewer_rows_than`]                | :white_check_mark: |
 [`equality`]                       | :white_check_mark: |
 [`expression_is_true`]             | :white_check_mark: |
-[`recency`]                        | :x:                | Materialize does not support creating views containing `current_timestamp`.
+[`recency`]                        | :white_check_mark: |
 [`at_least_one`]                   | :white_check_mark: |
 [`not_constant`]                   | :white_check_mark: |
 [`cardinality_equality`]           | :white_check_mark: |
@@ -108,7 +108,7 @@ Name                  | Supported?         | Notes
 
 Name                  | Supported?         | Notes
 ----------------------|--------------------|------
-[`current_timestamp`] | :x:                | Materialize does not support creating views containing `current_timestamp`.
+[`current_timestamp`] | :white_check_mark: |
 [`dateadd`]           | :white_check_mark: |
 [`datediff`]          | :white_check_mark: |
 [`split_part`]        | :white_check_mark: |

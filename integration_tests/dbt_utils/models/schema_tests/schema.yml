@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: test_recency_override
+    tests:
+      - dbt_utils.recency:
+          datepart: day
+          field: today
+          interval: 1
