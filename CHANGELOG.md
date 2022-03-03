@@ -6,7 +6,9 @@
 
 * Bump the minimum supported version of Materialize to v0.22.0+.
 
-* Mark the `recency` and `current_timestamp` macros as supported.
+* Support and test the `recency` and `current_timestamp` macros.
+
+* Correctly mark the `insert_by_period` macro as unsupported.
 
 ## 0.2.0 - 2021-02-14
 

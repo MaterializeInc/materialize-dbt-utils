@@ -67,7 +67,7 @@ Name                               | Supported?         | Notes
 [`relationships_where`]            | :white_check_mark: |
 [`sequential_values`]              | :x:                | Materialize does not support the `lag` window function.
 [`mutually_exclusive_ranges`]      | :x:                | Materialize does not support the `lead` window function.
-[`unique_combinations_of_columns`] | :white_check_mark: |
+[`unique_combination_of_columns`]  | :white_check_mark: |
 [`accepted_range`]                 | :white_check_mark: |
 
 ### [`dbt-utils` macros]
@@ -129,7 +129,7 @@ Name                  | Supported?         | Notes
 
 Name                 | Supported?         | Notes
 ---------------------|--------------------|------
-[`insert_by_period`] | :white_check_mark: |
+[`insert_by_period`] | :x:                | Materialize natively provides incremental view maintenance.
 
 [`accepted_range`]: https://github.com/dbt-labs/dbt-utils#accepted_range-source
 [`at_least_one`]: https://github.com/dbt-labs/dbt-utils#at_least_one-source
@@ -177,6 +177,7 @@ Name                 | Supported?         | Notes
 [`surrogate_key`]: https://github.com/dbt-labs/dbt-utils#surrogate_key-source
 [`union_relations`]: https://github.com/dbt-labs/dbt-utils#union_relations-source
 [`unique_where`]: https://github.com/dbt-labs/dbt-utils#unique_where-source
+[`unique_combination_of_columns`]: https://github.com/dbt-labs/dbt-utils#unique_combination_of_columns-source
 [`unpivot`]: https://github.com/dbt-labs/dbt-utils#unpivot-source
 [`width_bucket`]: https://github.com/dbt-labs/dbt-utils#width_bucket-source
 [Cross-database macros]: https://github.com/dbt-labs/dbt-utils#cross-database-macros
