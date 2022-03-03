@@ -27,17 +27,11 @@ seeds:
 
 models:
   dbt_utils_integration_tests:
-    # Materialize doesn't support creating views containing current_timestamp.
-    cross_db_utils:
-      test_current_timestamp:
-        +enabled: false
-      test_current_timestamp_in_utc:
-        +enabled: false
-    schema_tests:
-      test_recency:
-        +enabled: false
-
     datetime:
       # Tested by test_date_spine_override.
       test_date_spine:
+        +enabled: false
+    schema_tests:
+      # Tested by test_recency_override.
+      test_recency:
         +enabled: false

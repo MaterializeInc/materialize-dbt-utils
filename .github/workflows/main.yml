@@ -14,7 +14,7 @@ jobs:
           submodules: true
       - name: Setup
         run: |
-          pip install dbt-materialize==1.0.1.post2
+          pip install dbt-materialize==1.0.3
           mkdir -p ~/.dbt
           cat > ~/.dbt/profiles.yml <<EOF
           config:
@@ -42,5 +42,5 @@ jobs:
 
     services:
       materialized:
-        image: materialize/materialized:v0.20.0
+        image: materialize/materialized:v0.22.0
         ports: ["6875:6875"]
