@@ -63,6 +63,52 @@ git commit -am 'Update dbt-utils'
 
 11. Verify that CI passes on the tag and publishes a GitHub release.
 
+## Testing
+
+To run the suite of integration tests:
+
+1. Add the following profile to your list of dbt profiles (run `dbt debug` to locate
+   your local profiles):
+
+   ```yaml
+   integration_tests:
+        outputs:
+          materialize:
+            type: materialize
+            threads: 1
+            host: localhost
+            port: 6875
+            user: materialize
+            password: password
+            dbname: materialize
+            schema: public
+        target: materialize
+   ```
+
+1. Clone this repository and navigate to the `integration_tests` subdirectory:
+
+   ```nofmt
+   git clone https://github.com/MaterializeInc/materialize-dbt-utils.git
+
+   cd integration_tests
+   ```
+
+1. To run the tests for `dbt-utils`:
+
+    ```nofmt
+   cd dbt_utils
+
+   make test-materialize
+   ```
+
+1. To run the tests for `dbt-audit-helper`:
+
+   ```noftm
+   cd dbt_audit_helper
+
+   make test-materialize
+   ```
+
 [.github/workflows/main.yml]: .github/workflows/main.yml
 [dbt_project.yml]: dbt_project.yml
 [CHANGELOG.md]: CHANGELOG.md
