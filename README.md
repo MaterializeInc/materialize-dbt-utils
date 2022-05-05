@@ -4,7 +4,7 @@ This [dbt](https://github.com/dtb-labs/dbt) package provides shims for using the
 following packages with [Materialize]:
 
 - [dbt-utils](https://github.com/dbt-labs/dbt-utils)
-- [dbt-audit-helper](https://github.com/fishtown-analytics/dbt-audit-helper)
+- [dbt-audit-helper](https://github.com/dbt-labs/dbt-audit-helper)
 
 ## Getting started with dbt + Materialize
 
@@ -16,7 +16,7 @@ following packages with [Materialize]:
 ## Installation
 
 Requirements:
-- [dbt-materialize](https://pypi.org/project/dbt-materialize/) v1.0.3
+- [dbt-materialize](https://pypi.org/project/dbt-materialize/) v1.0.3+
 - [Materialize](https://materialize.com/docs/install/) v0.22.0+
 
 Install this package by adding the following to the `packages.yml` file in your
@@ -27,7 +27,7 @@ packages:
   - package: dbt-labs/dbt_utils
     version: 0.8.0
   - package: MaterializeInc/materialize_dbt_utils
-    version: 0.5.0
+    version: 0.4.0
 ```
 
 Then set a `dispatch` config in your `dbt_project.yml`:
@@ -37,7 +37,7 @@ dispatch:
   - macro_namespace: dbt_utils
     search_order: [materialize_dbt_utils, dbt_utils]
   - macro_namespace: audit_helper
-        search_order: ['materialize_dbt_utils', 'audit_helper']
+    search_order: [materialize_dbt_utils, audit_helper]
 ```
 
 With this project setting, dbt will first search for macro implementations in

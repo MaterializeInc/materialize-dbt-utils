@@ -51,7 +51,10 @@ aggregated as (
 select
     match_status,
     count_records,
-    round(100.0 * count_records / sum(count_records) over (), 2) as percent_of_total
+    -- TODO(morsapaes): Materialize doesn't support window functions yet,
+    -- so adding a ugly hack. Once we do, revert to the original:
+    -- round(100.0 * count_records / sum(count_records) over (), 2) as percent_of_total
+    round(100.0 * count_records / (select sum(count_records) from aggregated), 2) as percent_of_total
 
 from aggregated
 

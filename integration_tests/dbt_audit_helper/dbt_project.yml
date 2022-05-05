@@ -1,4 +1,4 @@
-name: materialize_dbt_utils_dbt_utils_integration_tests
+name: materialize_dbt_utils_dbt_audit_helper_integration_tests
 version: '1.0'
 config-version: 2
 
@@ -7,31 +7,3 @@ profile: integration_tests
 dispatch:
   - macro_namespace: audit_helper
     search_order: [materialize_dbt_utils, audit_helper]
-
-seeds:
-  dbt_utils_integration_tests:
-    schema_tests:
-      # Materialize does not support the `lead` window function.
-      data_test_mutually_exclusive_ranges_no_gaps:
-        +enabled: false
-      data_test_mutually_exclusive_ranges_with_gaps:
-        +enabled: false
-      data_test_mutually_exclusive_ranges_with_gaps_zero_length:
-        +enabled: false
-
-      # Materialize does not support the `lag` window function.
-      data_test_sequential_timestamps:
-        +enabled: false
-      data_test_sequential_values:
-        +enabled: false
-
-models:
-  dbt_utils_integration_tests:
-    datetime:
-      # Tested by test_date_spine_override.
-      test_date_spine:
-        +enabled: false
-    schema_tests:
-      # Tested by test_recency_override.
-      test_recency:
-        +enabled: false
