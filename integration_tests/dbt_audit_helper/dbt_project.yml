@@ -1,0 +1,9 @@
+name: materialize_dbt_utils_dbt_audit_helper_integration_tests
+version: '1.0'
+config-version: 2
+
+profile: integration_tests
+
+dispatch:
+  - macro_namespace: audit_helper
+    search_order: [materialize_dbt_utils, audit_helper]

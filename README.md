@@ -4,6 +4,7 @@ This [dbt](https://github.com/dtb-labs/dbt) package provides shims for using the
 following packages with [Materialize]:
 
 - [dbt-utils](https://github.com/dbt-labs/dbt-utils)
+- [dbt-audit-helper](https://github.com/dbt-labs/dbt-audit-helper)
 
 ## Getting started with dbt + Materialize
 
@@ -15,7 +16,7 @@ following packages with [Materialize]:
 ## Installation
 
 Requirements:
-- [dbt-materialize](https://pypi.org/project/dbt-materialize/) v1.0.3
+- [dbt-materialize](https://pypi.org/project/dbt-materialize/) v1.0.3+
 - [Materialize](https://materialize.com/docs/install/) v0.22.0+
 
 Install this package by adding the following to the `packages.yml` file in your
@@ -26,15 +27,17 @@ packages:
   - package: dbt-labs/dbt_utils
     version: 0.8.0
   - package: MaterializeInc/materialize_dbt_utils
-    version: 0.3.0
+    version: 0.4.0
 ```
 
-Then set a `dispatch` config in your `dbt_project.yml:
+Then set a `dispatch` config in your `dbt_project.yml`:
 
 ```yml
 dispatch:
   - macro_namespace: dbt_utils
     search_order: [materialize_dbt_utils, dbt_utils]
+  - macro_namespace: audit_helper
+    search_order: [materialize_dbt_utils, audit_helper]
 ```
 
 With this project setting, dbt will first search for macro implementations in
@@ -131,9 +134,22 @@ Name                 | Supported?         | Notes
 ---------------------|--------------------|------
 [`insert_by_period`] | :x:                | Materialize natively provides incremental view maintenance.
 
+### [`dbt-audit-helper` macros]
+
+Name                          | Supported?         | Notes
+------------------------------|--------------------|------
+[`compare_relations`]         | :white_check_mark: |
+[`compare_queries`]           | :white_check_mark: |
+[`compare_column_values`]     | :white_check_mark: |
+[`compare_relation_columns`]  | :white_check_mark: |
+
 [`accepted_range`]: https://github.com/dbt-labs/dbt-utils#accepted_range-source
 [`at_least_one`]: https://github.com/dbt-labs/dbt-utils#at_least_one-source
 [`cardinality_equality`]: https://github.com/dbt-labs/dbt-utils#cardinality_equality-source
+[`compare_column_values`]: https://github.com/dbt-labs/dbt-audit-helper#compare_column_values-source
+[`compare_queries`]: https://github.com/dbt-labs/dbt-audit-helper#compare_queries-source
+[`compare_relation_columns`]: https://github.com/dbt-labs/dbt-audit-helper#compare_relation_columns-source
+[`compare_relations`]: https://github.com/dbt-labs/dbt-audit-helper#compare_relations-source
 [`current_timestamp`]: https://github.com/dbt-labs/dbt-utils#current_timestamp-source
 [`date_spine`]: https://github.com/dbt-labs/dbt-utils#date_spine-source
 [`date_trunc`]: https://github.com/dbt-labs/dbt-utils#date_trunc-source
