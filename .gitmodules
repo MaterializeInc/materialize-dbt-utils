@@ -1,3 +1,6 @@
 [submodule "dbt-utils"]
 	path = dbt-utils
 	url = https://github.com/dbt-labs/dbt-utils
+[submodule "dbt-audit-helper"]
+	path = dbt-audit-helper
+	url = https://github.com/dbt-labs/dbt-audit-helper
