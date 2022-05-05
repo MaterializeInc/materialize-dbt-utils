@@ -2,7 +2,7 @@
 
 ## 0.4.0 - 2022-05-05
 
-* Shim `dbt-audit-helper` ([v0.5.0](https://github.com/dbt-labs/dbt-audit-helper/releases/tag/0.5.0)).
+* Shim `dbt-audit-helper` ([v0.5.0](https://github.com/dbt-labs/dbt-audit-helper/releases/tag/0.5.0)) macros for compatibility.
 
 ## 0.3.0 - 2022-03-03
 
