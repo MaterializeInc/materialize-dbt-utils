@@ -1,0 +1,4 @@
+packages:
+  - local: ../../
+  - local: ../../dbt-audit-helper
+  - local: ../../dbt-audit-helper/integration_tests
