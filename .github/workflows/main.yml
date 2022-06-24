@@ -45,5 +45,5 @@ jobs:
 
     services:
       materialized:
-        image: materialize/materialized:v0.22.0
+        image: materialize/materialized:v0.26.3
         ports: ["6875:6875"]
