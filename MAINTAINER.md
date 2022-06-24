@@ -112,3 +112,4 @@ To run the suite of integration tests:
 [.github/workflows/main.yml]: .github/workflows/main.yml
 [dbt_project.yml]: dbt_project.yml
 [CHANGELOG.md]: CHANGELOG.md
+[README.md]: README.md

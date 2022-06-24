@@ -1,5 +1,11 @@
 # materialize-dbt-utils Changelog
 
+## 0.5.0 - 2022-06-24
+
+* Bump the minimum supported version of Materialize to v0.26.3.
+
+* Support and test the `sequential_values` and `mutually_exclusive_ranges` macros.
+
 ## 0.4.0 - 2022-05-05
 
 * Shim `dbt-audit-helper` ([v0.5.0](https://github.com/dbt-labs/dbt-audit-helper/releases/tag/0.5.0)) macros for compatibility.

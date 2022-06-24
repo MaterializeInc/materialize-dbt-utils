@@ -8,23 +8,6 @@ dispatch:
   - macro_namespace: dbt_utils
     search_order: [materialize_dbt_utils, dbt_utils_integration_tests, dbt_utils]
 
-seeds:
-  dbt_utils_integration_tests:
-    schema_tests:
-      # Materialize does not support the `lead` window function.
-      data_test_mutually_exclusive_ranges_no_gaps:
-        +enabled: false
-      data_test_mutually_exclusive_ranges_with_gaps:
-        +enabled: false
-      data_test_mutually_exclusive_ranges_with_gaps_zero_length:
-        +enabled: false
-
-      # Materialize does not support the `lag` window function.
-      data_test_sequential_timestamps:
-        +enabled: false
-      data_test_sequential_values:
-        +enabled: false
-
 models:
   dbt_utils_integration_tests:
     datetime:

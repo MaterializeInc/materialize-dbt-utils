@@ -17,7 +17,7 @@ following packages with [Materialize]:
 
 Requirements:
 - [dbt-materialize](https://pypi.org/project/dbt-materialize/) v1.0.3+
-- [Materialize](https://materialize.com/docs/install/) v0.22.0+
+- [Materialize](https://materialize.com/docs/install/) v0.26.3+
 
 Install this package by adding the following to the `packages.yml` file in your
 root dbt project:
@@ -27,7 +27,7 @@ packages:
   - package: dbt-labs/dbt_utils
     version: 0.8.0
   - package: MaterializeInc/materialize_dbt_utils
-    version: 0.4.0
+    version: 0.5.0
 ```
 
 Then set a `dispatch` config in your `dbt_project.yml`:
@@ -68,8 +68,8 @@ Name                               | Supported?         | Notes
 [`not_null_proportion`]            | :white_check_mark: |
 [`not_accepted_values`]            | :white_check_mark: |
 [`relationships_where`]            | :white_check_mark: |
-[`sequential_values`]              | :x:                | Materialize does not support the `lag` window function.
-[`mutually_exclusive_ranges`]      | :x:                | Materialize does not support the `lead` window function.
+[`sequential_values`]              | :white_check_mark: |
+[`mutually_exclusive_ranges`]      | :white_check_mark: |
 [`unique_combination_of_columns`]  | :white_check_mark: |
 [`accepted_range`]                 | :white_check_mark: |
 
