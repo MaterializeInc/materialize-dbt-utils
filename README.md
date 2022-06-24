@@ -155,6 +155,7 @@ Name                          | Supported?         | Notes
 [`date_trunc`]: https://github.com/dbt-labs/dbt-utils#date_trunc-source
 [`dateadd`]: https://github.com/dbt-labs/dbt-utils#dateadd-source
 [`datediff`]: https://github.com/dbt-labs/dbt-utils#datediff-source
+[`dbt-audit-helper` macros]: https://github.com/dbt-labs/dbt-audit-helper#macros
 [`dbt-utils` macros]: https://github.com/dbt-labs/dbt-utils#macros
 [`dbt-utils` materializations]: https://github.com/dbt-labs/dbt-utils#materializations
 [`dbt-utils` schema tests]: https://github.com/dbt-labs/dbt-utils#schema-tests
