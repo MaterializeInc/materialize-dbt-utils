@@ -16,8 +16,8 @@ following packages with [Materialize]:
 ## Installation
 
 Requirements:
-- [dbt-materialize](https://pypi.org/project/dbt-materialize/) v1.0.3+
-- [Materialize](https://materialize.com/docs/install/) v0.26.3+
+- [dbt-materialize](https://pypi.org/project/dbt-materialize/) v1.3.0+
+- [Materialize](https://materialize.com/docs/install/) v0.26.5+
 
 Install this package by adding the following to the `packages.yml` file in your
 root dbt project:

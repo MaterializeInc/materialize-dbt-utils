@@ -4,6 +4,18 @@ config-version: 2
 
 profile: integration_tests
 
+model-paths: ["models"]
+analysis-paths: ["analysis"]
+test-paths: ["tests"]
+seed-paths: ["data"]
+macro-paths: ["macros"]
+
+target-path: "target"  # directory which will store compiled SQL files
+clean-targets:         # directories to be removed by `dbt clean`
+    - "target"
+    - "dbt_modules"
+    - "dbt_packages"
+
 dispatch:
   - macro_namespace: dbt_utils
     search_order: [materialize_dbt_utils, dbt_utils_integration_tests, dbt_utils]
@@ -17,4 +29,9 @@ models:
     schema_tests:
       # Tested by test_recency_override.
       test_recency:
+        +enabled: false
+seeds:
+  dbt_utils_integration_tests:
+    sql:
+      data_get_column_values_dropped:
         +enabled: false
