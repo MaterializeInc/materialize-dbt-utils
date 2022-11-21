@@ -1,5 +1,11 @@
 # materialize-dbt-utils Changelog
 
+## Unreleased
+
+* Deprecate the `dateadd`, `datediff`, `last_day` macros. These macros have been
+  moved into dbt Core in [dbt-core #5298](https://github.com/dbt-labs/dbt-core/pull/5298),
+  and will be removed in a subsequent release.
+
 ## 0.5.0 - 2022-06-24
 
 * Bump the minimum supported version of Materialize to v0.26.3.
