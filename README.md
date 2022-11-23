@@ -27,7 +27,7 @@ packages:
   - package: dbt-labs/dbt_utils
     version: 0.9.2
   - package: MaterializeInc/materialize_dbt_utils
-    version: 0.5.0
+    version: 0.6.0
 ```
 
 Then set a `dispatch` config in your `dbt_project.yml`:
