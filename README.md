@@ -25,7 +25,7 @@ root dbt project:
 ```
 packages:
   - package: dbt-labs/dbt_utils
-    version: 0.9.2
+    version: 0.9.5
   - package: MaterializeInc/materialize_dbt_utils
     version: 0.6.0
 ```
