@@ -2,23 +2,23 @@
 
 ## Bumping dependency versions
 
-To update the tested version of dbt-materialize, bump the version specification
+To update the tested version of `dbt-materialize`, bump the version specification
 in the `pip install` invocation in [.github/workflows/main.yml].
 
 To update the tested version of `materialized`, bump the version specification
 in the `services` specification in [.github/workflows/main.yml]. We explicitly
 avoid depending on `latest` so that CI is deterministic.
 
-To update the embedded dbt-utils:
+To update the embedded `dbt-utils`:
 
 ```shell
 cd dbt-utils
-git checkout vVERSION
-git pull
+git fetch origin
+git checkout VERSION
 cd ..
 # Update dbt-utils version in README.md
 # Update compatibility matrix for new macros/schema-tests in README.md.
-git commit -am 'Update dbt-utils'
+git commit -am 'Bump dbt-utils to VERSION'
 ```
 
 ## Cutting a new release
