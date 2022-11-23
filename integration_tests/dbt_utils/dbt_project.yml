@@ -30,8 +30,15 @@ models:
       # Tested by test_recency_override.
       test_recency:
         +enabled: false
+
 seeds:
   dbt_utils_integration_tests:
     sql:
       data_get_column_values_dropped:
+        +enabled: false
+    schema_tests:
+      # TODO(morsapaes): Enable once materialize #15863 lands
+      data_test_mutually_exclusive_ranges_with_gaps:
+        +enabled: false
+      data_test_mutually_exclusive_ranges_with_gaps_zero_length:
         +enabled: false
