@@ -1,6 +1,6 @@
 # materialize-dbt-utils Changelog
 
-## Unreleased
+## 0.6.0 - 2022-11-23
 
 * Bump the minimum supported version of `dbt-materialize` to v1.3.0.
 
