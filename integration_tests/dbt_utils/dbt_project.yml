@@ -26,9 +26,19 @@ models:
       # Tested by test_date_spine_override.
       test_date_spine:
         +enabled: false
-    schema_tests:
+    generic_tests:
       # Tested by test_recency_override.
       test_recency:
+        +enabled: false
+    cross_db_utils:
+      # Materialize does not support the bool_or function
+      test_bool_or:
+        +enabled: false
+      # Materialize does not support the array_append function
+      test_array_append:
+        +enabled: false
+      # TODO(morsapaes): Enable once materialize #15863 lands (with an override, not error)
+      test_listagg:
         +enabled: false
 
 seeds:
