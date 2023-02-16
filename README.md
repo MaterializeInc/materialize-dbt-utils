@@ -17,7 +17,7 @@ following packages with [Materialize]:
 
 Requirements:
 - [dbt-materialize](https://pypi.org/project/dbt-materialize/) v1.3.0+
-- [Materialize](https://materialize.com/docs/install/) v0.26.5+
+- [Materialize](https://materialize.com/docs/install/) v0.43.0+
 
 Install this package by adding the following to the `packages.yml` file in your
 root dbt project:
@@ -111,12 +111,13 @@ Name                  | Supported?         | Notes
 
 Name                  | Supported?         | Notes
 ----------------------|--------------------|------
-[`current_timestamp`] | :white_check_mark: |
-[`dateadd`]           | :white_check_mark: |
-[`datediff`]          | :white_check_mark: |
-[`split_part`]        | :white_check_mark: |
-[`date_trunc`]        | :white_check_mark: |
-[`last_day`]          | :white_check_mark: |
+[`bool_or`]           | :white_check_mark: | Migrated to dbt Core
+[`current_timestamp`] | :white_check_mark: | Migrated to dbt Core
+[`dateadd`]           | :white_check_mark: | Migrated to dbt Core
+[`datediff`]          | :white_check_mark: | Migrated to dbt Core
+[`split_part`]        | :white_check_mark: | Migrated to dbt Core
+[`date_trunc`]        | :white_check_mark: | Migrated to dbt Core
+[`last_day`]          | :white_check_mark: | Migrated to dbt Core
 [`width_bucket`]      | :white_check_mark: |
 
 #### [Jinja helpers]
