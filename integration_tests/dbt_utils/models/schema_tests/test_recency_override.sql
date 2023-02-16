@@ -3,4 +3,4 @@
 -- hardcode that PostgreSQL-specific logic here.
 
 select
-    {{ dbt_utils.date_trunc('day', dbt_utils.current_timestamp()) }} as today
+    {{ dbt.date_trunc('day', dbt.current_timestamp()) }} as today

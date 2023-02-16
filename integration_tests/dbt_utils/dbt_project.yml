@@ -31,24 +31,12 @@ models:
       test_recency:
         +enabled: false
     cross_db_utils:
-      # Materialize does not support the bool_or function
-      test_bool_or:
-        +enabled: false
       # Materialize does not support the array_append function
       test_array_append:
-        +enabled: false
-      # TODO(morsapaes): Enable once materialize #15863 lands (with an override, not error)
-      test_listagg:
         +enabled: false
 
 seeds:
   dbt_utils_integration_tests:
     sql:
       data_get_column_values_dropped:
-        +enabled: false
-    schema_tests:
-      # TODO(morsapaes): Enable once materialize #15863 lands
-      data_test_mutually_exclusive_ranges_with_gaps:
-        +enabled: false
-      data_test_mutually_exclusive_ranges_with_gaps_zero_length:
         +enabled: false
