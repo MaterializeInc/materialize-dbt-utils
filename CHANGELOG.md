@@ -1,6 +1,6 @@
 # materialize-dbt-utils Changelog
 
-## Unreleased
+## 0.7.0 - 2023-02-17
 
 * Bump the minimum supported version of Materialize to v0.43.0.
 

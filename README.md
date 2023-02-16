@@ -27,7 +27,7 @@ packages:
   - package: dbt-labs/dbt_utils
     version: 0.9.5
   - package: MaterializeInc/materialize_dbt_utils
-    version: 0.6.0
+    version: 0.7.0
 ```
 
 Then set a `dispatch` config in your `dbt_project.yml`:
@@ -146,6 +146,7 @@ Name                          | Supported?         | Notes
 
 [`accepted_range`]: https://github.com/dbt-labs/dbt-utils#accepted_range-source
 [`at_least_one`]: https://github.com/dbt-labs/dbt-utils#at_least_one-source
+[`bool_or`]: https://docs.getdbt.com/reference/dbt-jinja-functions/cross-database-macros#bool_or
 [`cardinality_equality`]: https://github.com/dbt-labs/dbt-utils#cardinality_equality-source
 [`compare_column_values`]: https://github.com/dbt-labs/dbt-audit-helper#compare_column_values-source
 [`compare_queries`]: https://github.com/dbt-labs/dbt-audit-helper#compare_queries-source
@@ -153,9 +154,9 @@ Name                          | Supported?         | Notes
 [`compare_relations`]: https://github.com/dbt-labs/dbt-audit-helper#compare_relations-source
 [`current_timestamp`]: https://github.com/dbt-labs/dbt-utils#current_timestamp-source
 [`date_spine`]: https://github.com/dbt-labs/dbt-utils#date_spine-source
-[`date_trunc`]: https://github.com/dbt-labs/dbt-utils#date_trunc-source
-[`dateadd`]: https://github.com/dbt-labs/dbt-utils#dateadd-source
-[`datediff`]: https://github.com/dbt-labs/dbt-utils#datediff-source
+[`date_trunc`]: https://docs.getdbt.com/reference/dbt-jinja-functions/cross-database-macros#date_trunc
+[`dateadd`]: https://docs.getdbt.com/reference/dbt-jinja-functions/cross-database-macros#dateadd
+[`datediff`]: https://docs.getdbt.com/reference/dbt-jinja-functions/cross-database-macros#datediff
 [`dbt-audit-helper` macros]: https://github.com/dbt-labs/dbt-audit-helper#macros
 [`dbt-utils` macros]: https://github.com/dbt-labs/dbt-utils#macros
 [`dbt-utils` materializations]: https://github.com/dbt-labs/dbt-utils#materializations
@@ -175,7 +176,7 @@ Name                          | Supported?         | Notes
 [`group_by`]: https://github.com/dbt-labs/dbt-utils#group_by-source
 [`haversine_distance`]: https://github.com/dbt-labs/dbt-utils#haversine_distance-source
 [`insert_by_period`]: https://github.com/dbt-labs/dbt-utils#insert_by_period-source
-[`last_day`]: https://github.com/dbt-labs/dbt-utils#last_day-source
+[`last_day`]: https://docs.getdbt.com/reference/dbt-jinja-functions/cross-database-macros#last_day
 [`log_info`]: https://github.com/dbt-labs/dbt-utils#log_info-source
 [`mutually_exclusive_ranges`]: https://github.com/dbt-labs/dbt-utils#mutually_exclusive_ranges-source
 [`not_accepted_values`]: https://github.com/dbt-labs/dbt-utils#not_accepted_values-source
@@ -190,7 +191,7 @@ Name                          | Supported?         | Notes
 [`safe_add`]: https://github.com/dbt-labs/dbt-utils#safe_add-source
 [`sequential_values`]: https://github.com/dbt-labs/dbt-utils#sequential_values-source
 [`slugify`]: https://github.com/dbt-labs/dbt-utils#slugify-source
-[`split_part`]: https://github.com/dbt-labs/dbt-utils#split_part-source
+[`split_part`]: https://docs.getdbt.com/reference/dbt-jinja-functions/cross-database-macros#split_part
 [`star`]: https://github.com/dbt-labs/dbt-utils#star-source
 [`surrogate_key`]: https://github.com/dbt-labs/dbt-utils#surrogate_key-source
 [`union_relations`]: https://github.com/dbt-labs/dbt-utils#union_relations-source
@@ -198,7 +199,7 @@ Name                          | Supported?         | Notes
 [`unique_combination_of_columns`]: https://github.com/dbt-labs/dbt-utils#unique_combination_of_columns-source
 [`unpivot`]: https://github.com/dbt-labs/dbt-utils#unpivot-source
 [`width_bucket`]: https://github.com/dbt-labs/dbt-utils#width_bucket-source
-[Cross-database macros]: https://github.com/dbt-labs/dbt-utils#cross-database-macros
+[Cross-database macros]: https://docs.getdbt.com/reference/dbt-jinja-functions/cross-database-macros
 [Introspective macros]: https://github.com/dbt-labs/dbt-utils#introspective-macros
 [Jinja helpers]: https://github.com/dbt-labs/dbt-utils#jinja-helpers
 [Materialize]: https://github.com/MaterializeInc/materialize
