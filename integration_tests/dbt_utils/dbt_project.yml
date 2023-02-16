@@ -40,4 +40,3 @@ seeds:
     sql:
       data_get_column_values_dropped:
         +enabled: false
-    schema_tests:
