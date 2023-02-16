@@ -1,4 +1,4 @@
-{% macro materialize__compare_relations(a_relation, b_relation, exclude_columns=[], primary_key=None) %}
+{% macro materialize__compare_relations(a_relation, b_relation, exclude_columns=[], primary_key=None, summarize=true) %}
 
 {%- set a_columns = adapter.get_columns_in_relation(a_relation) -%}
 

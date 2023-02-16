@@ -1,4 +1,4 @@
-{% macro materialize__compare_queries(a_query, b_query, primary_key=None) %}
+{% macro materialize__compare_queries(a_query, b_query, primary_key=None, summarize=true) %}
 
 with a as (
 
@@ -15,7 +15,7 @@ b as (
 a_intersect_b as (
 
     select * from a
-    {{ dbt_utils.intersect() }}
+    {{ dbt.intersect() }}
     select * from b
 
 ),
@@ -23,7 +23,7 @@ a_intersect_b as (
 a_except_b as (
 
     select * from a
-    {{ dbt_utils.except() }}
+    {{ dbt.except() }}
     select * from b
 
 ),
@@ -31,7 +31,7 @@ a_except_b as (
 b_except_a as (
 
     select * from b
-    {{ dbt_utils.except() }}
+    {{ dbt.except() }}
     select * from a
 
 ),
@@ -62,6 +62,8 @@ all_records as (
 
 ),
 
+{%- if summarize %}
+
 summary_stats as (
     select
         in_a,
@@ -70,19 +72,32 @@ summary_stats as (
     from all_records
 
     group by 1, 2
+),
+
+final as (
+    select
+        *,
+        -- TODO(morsapaes): Materialize doesn't support window functions yet,
+        -- so adding a ugly hack. Once we do, revert to the original:
+        -- round(100.0 * count / sum(count) over (), 2) as percent_of_total
+        round(100.0 * count / (select sum(count) from summary_stats), 2) as percent_of_total
+
+    from summary_stats
+    order by in_a desc, in_b desc
 )
--- select * from all_records
--- where not (in_a and in_b)
--- order by {{ primary_key ~ ", " if primary_key is not none }} in_a desc, in_b desc
 
-select
-    *,
-    -- TODO(morsapaes): Materialize doesn't support window functions yet,
-    -- so adding a ugly hack. Once we do, revert to the original:
-    -- round(100.0 * count / sum(count) over (), 2) as percent_of_total
-    round(100.0 * count / (select sum(count) from summary_stats), 2) as percent_of_total
+{%- else %}
 
-from summary_stats
-order by in_a desc, in_b desc
+final as (
+
+    select * from all_records
+    where not (in_a and in_b)
+    order by {{ primary_key ~ ", " if primary_key is not none }} in_a desc, in_b desc
+
+)
+
+{%- endif %}
+
+select * from final
 
 {% endmacro %}
