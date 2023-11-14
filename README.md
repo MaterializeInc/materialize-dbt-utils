@@ -88,7 +88,7 @@ Name                          | Supported?         | Notes
 
 Name                   | Supported?         | Notes
 -----------------------|--------------------|-------
-[`date_spine`]         | :white_check_mark: |
+[`date_spine`]         | :white_check_mark: | Migrated to dbt Core
 [`haversine_distance`] | :white_check_mark: |
 [`group_by`]           | :white_check_mark: |
 [`star`]               | :white_check_mark: |
